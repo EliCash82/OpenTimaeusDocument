@@ -1,24 +1,13 @@
-# README
+# Open Timaeus
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+The Open Timaeus Project is a Ruby on Rails based Digital Humanities
+application with the goal of aggregating knowledge, discussion, and
+scholarship related to Plato's Timaeus.
 
-Things you may want to cover:
+### Current Features
+* Full Archer-Hind Translation (1888; Public Domain)
+* Annotation Database
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### Planned Features
+* Further Translations
+* Community Annotation Comments

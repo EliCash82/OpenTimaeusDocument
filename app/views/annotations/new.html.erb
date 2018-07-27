@@ -1,5 +1,7 @@
 <h1>New Annotation</h1>
-
+<% if user_signed_in? %>
 <%= render 'form', annotation: @annotation %>
-
+<% else %>
+<p>You are not authorized to use this page</p>
+<% end %>
 <%= link_to 'Back', annotations_path %>

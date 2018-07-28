@@ -18,3 +18,6 @@
 //= require jquery3
 //= require popper
 //= require bootstrap
+//= require stickynav
+//= require raf
+//= require resizesensor 

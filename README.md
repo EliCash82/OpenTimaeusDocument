@@ -31,7 +31,7 @@ directions for single user system (github.com/platformatec/devise/wiki/How-To:-S
 
 Injections:
 
-* Stickynav Index Module
+* Stickynav Index Module - Altered version of [sticky-sidebar](https://github.com/abouolia/sticky-sidebar)
   * Stylesheets
     * `stickynav.css`
   * Javascripts

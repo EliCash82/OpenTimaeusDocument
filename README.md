@@ -38,7 +38,7 @@ Injections:
     * `stickynav.js`
     * `resizesensor.js`
     * `raf.js`
-* IndexToggle Module - A Jquery based implementation.  All javascript currently included in `views/translations/archerhind.html.erb`
+* IndexToggle Module - A Jquery based implementation.  All javascript currently included in `views/translations/archerhind.html.erb` altered code found [here](https://codepen.io/NRe4ma/pen/bdvPeN)
   * Stylesheets
     * toggle.css
 

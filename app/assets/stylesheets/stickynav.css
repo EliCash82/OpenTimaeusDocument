@@ -9,13 +9,14 @@
 #sidebar{
     float: left;
     width: 200px;
-    color: #ffbdbd;
+    //color: #ffbdbd;
+    color: black;
     will-change: min-height;
 }
 
 #sidebar .sidebar__inner{
-    border: 2px dotted red;
-    padding: 10px;
+    //border: 2px dotted red;
+    padding: 5px;
     position: relative;
     transform: translate(0, 0);
     transform: translate3d(0, 0, 0);

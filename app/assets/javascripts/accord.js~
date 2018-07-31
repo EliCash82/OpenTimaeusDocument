@@ -1,0 +1,113 @@
+function accordion(options){
+
+    this.index = options.index;
+    var openChild = false;
+
+    var self = this;
+    var cEvent = {};
+    var slideSpeed = 200;
+	
+    var headClass = '.accHead';
+    var bodyClass = '.accBody';
+	
+    var $parent = options.parent;
+    var $heads = $parent.find(headClass);
+    var $bodies = $parent.find(bodyClass)
+		
+    $heads.on('click', function(e){
+		
+	var headClicked = $heads.index($(this)) + 1;
+	var wasTriggered = (!e.clientX);
+		
+	var previousOpen = (headClicked == openChild) ? headClicked : openChild;
+	var newOpen = (headClicked == openChild) ? false : headClicked;
+	
+	$heads.add($bodies).removeClass('on');
+
+	if (!openChild) {
+	    var type = 'open';
+	} else if(headClicked == openChild) {
+	    var type = 'close';
+	} else {
+	    var type = 'swap';
+	}
+
+	cEvent = { clicked: headClicked,
+		   triggered: wasTriggered,
+		   previousOpen: previousOpen,
+		   openChild: newOpen,
+		   headElement: $(this),
+		   bodyElement: $bodies.index(headClicked - 1),
+		   type: type,
+		   accordion: self
+		 };
+					
+	options.click_callback(cEvent);
+
+	if (openChild) closeLevel((headClicked == openChild) ? headClicked : openChild);
+	if ((!openChild) || (headClicked != openChild)) openLevel(headClicked);
+
+	openChild = newOpen;
+
+    });
+		
+    var openLevel = function(levelId)
+    {
+	var $bodyEl = $bodies.eq(levelId - 1);
+	var $headEl = $heads.eq(levelId - 1);
+	cEvent.bodyElement = $bodyEl;
+	cEvent.headElement = $headEl;
+
+	$headEl.addClass('on');
+	$bodyEl.addClass('on').slideDown(slideSpeed, function(){
+	    options.open_callback(cEvent);
+	})
+    }
+	
+    var closeLevel = function(levelId)
+    {
+	var $bodyEl = $bodies.eq(levelId - 1);
+	var $headEl = $heads.eq(levelId - 1);
+	cEvent.bodyElement = $bodyEl;
+	cEvent.headElement = $headEl;
+
+	$bodyEl.slideUp(slideSpeed, function(){
+	    options.close_callback(cEvent);
+	});
+    }
+		
+    this.closeAll = function()
+    {
+	$heads.add($bodies).removeClass('on');
+	$bodies.slideUp(0);
+	return this;
+    }
+
+    this.click = function(levelId, caller)
+    {
+	if(caller.index != this.index) $heads.eq(levelId - 1).trigger('click');
+    }
+
+    this.getHead = function(levelId)
+    {
+	return $heads.eq(levelId - 1);
+    }
+		
+    this.getBody = function(levelId)
+    {
+	return $bodies.eq(levelId - 1);
+    }
+
+    this.getParentAcc = function()
+    {
+	return $parent;
+    }
+}
+
+newAcc = new accordion({
+    parent: $('#accordion'),
+    click_callback: function(){},
+    open_callback: function(){},
+    close_callback: function(){},
+})
+    .closeAll();

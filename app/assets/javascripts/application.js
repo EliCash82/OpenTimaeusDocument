@@ -20,4 +20,5 @@
 //= require bootstrap
 //= require stickynav
 //= require raf
-//= require resizesensor 
+//= require resizesensor
+

@@ -7,9 +7,9 @@ scholarship related to Plato's Timaeus.
 ### Current Features
 * Full Archer-Hind Translation (1888; Public Domain)
 * Annotation Database
+* Recursive Index
 
 ### Planned Features
-* Recursive Index
 * Further Translations
 * Community Annotation Comments
 
@@ -31,10 +31,14 @@ directions for single user system (github.com/platformatec/devise/wiki/How-To:-S
 
 Injections:
 
-* Stickynav Index Module - Altered version of [sticky-sidebar](https://github.com/abouolia/sticky-sidebar)
+* Stickynav Index Module - Altered version of [sticky-sidebar](https://github.com/abouolia/sticky-sidebar) 
   * Stylesheets
     * `stickynav.css`
   * Javascripts
     * `stickynav.js`
     * `resizesensor.js`
     * `raf.js`
+* IndexToggle Module - A Jquery based implementation.  All javascript currently included in `views/translations/archerhind.html.erb`
+  * Stylesheets
+    * toggle.css
+

@@ -1,12 +1,33 @@
-.accHead{
-    border: 1px solid black;
-    background-color:#e5eecc;
-    padding: 5px;
+@import url(https://fonts.googleapis.com/css?family=Jacques+Francois);
+
+.accordion {
+  background-color: #f8f9fa;
+  color: black;
+  margin: 0;
+  padding: 0;
 }
 
-.accBody{
-    height: 50px;
-    border: 1px dashed black;
-    background-color:#e5eecc;
-    padding: 2px;
+.accordion-control {
+  background-color: #007bff;
+  color: white;
+  font-weight: bold;
+  display: block;
+  width: 100%;
+}
+
+.accordion li {
+  padding: 0px;
+  list-style-type:none;
+}
+.accordion-panel {
+  display:none;
+}
+
+button {
+  border:none;
+}
+
+/* Typography */
+body, button {
+  font-family: 'Jacques Francois', serif;
 }

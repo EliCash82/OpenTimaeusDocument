@@ -1,3 +1,4 @@
+<div class="container">
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -17,8 +18,9 @@
 
 <p>
   <strong>Source:</strong>
-  <%= @annotation.source %>
+  <%= image_tag @annotation.source %>
 </p>
 
 <%= link_to 'Edit', edit_annotation_path(@annotation) %> |
 <%= link_to 'Back', annotations_path %>
+</div>

@@ -1,0 +1,6 @@
+// pinkish-orange - eac7ab
+// purplish-pink - d2bfb8
+// green pine - 9bad97
+// yellow dark efb762
+// yellow light fdfff1
+

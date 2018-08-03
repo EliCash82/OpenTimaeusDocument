@@ -1,10 +1,27 @@
 <p id="notice"><%= notice %></p>
+<div class="container">
+  <div class="row">
+    <div class="col">
+  <h1>Annotations</h1>
+    </div>
+    <div class="col">
+      <div class="input-group">
+	<%= form_tag(annotations_path, :method => "get", id: "search-form") do %>
+	<%= text_field_tag :search, params[:search], placeholder: "Search Annotations", class: 'form-control' %>
+	<span class="input-group-btn">
+	  <%= submit_tag "Search", class: 'button' %>
+	</span>
+	<% end %>
+      </div>
+      <br/>
+    </div>
+  </div>
+  
 
-<h1>Annotations</h1>
-
-<table>
+<table class="table">
   <thead>
     <tr>
+      <th>ID</th>
       <th>Title</th>
       <th>Text</th>
       <th>Source</th>
@@ -16,10 +33,11 @@
   <tbody>
     <% @annotations.each do |annotation| %>
       <tr>
-        <td><%= annotation.title %></td>
+        <td><%= annotation.id %></td>
+	<td><%= annotation.title %></td>
         <td><%= annotation.text %></td>
         <td><%= annotation.source %></td>
-        <td><%= annotation.source %></td>
+        <td><%= image_tag annotation.source %></td>
         <td><%= link_to 'Show', annotation %></td>
 	<% if user_signed_in? %>
         <td><%= link_to 'Edit', edit_annotation_path(annotation) %></td>
@@ -35,3 +53,4 @@
 <br>
 
 <%= link_to 'New Annotation', new_annotation_path %>
+</container>
